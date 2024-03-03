@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Mongoose } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './user/user.module';
+
 
 
 // const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -34,7 +36,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [MongooseModule.forRoot(
     'mongodb+srv://Sandunika:sandunika98@cluster0.h8kwn40.mongodb.net/UserDB?retryWrites=true&w=majority&appName=Cluster0'
-    )],
+    ), UserModule, ],
   controllers: [AppController],
   providers: [AppService],
 })
