@@ -27,4 +27,8 @@ export class UserService {
             new:true
         });
     }
+
+    async delete(id:string){
+        await this.userModel.findByIdAndDelete(id);
+    }
 }
